@@ -61,11 +61,13 @@
 
 # 03 (Referenzmodelle)
 
-
-
-    "OSI ganz wichtig"
-    -> AUFBAU OSI Referenzmodell ("Das Modell an dem wir kommunikation definieren")
-    ("ES KÖNNTEN fragen kommen wie was macht die Sicherungsschicht")
+> JÖRG sagt :
+>
+>
+> "OSI ganz wichtig"
+> -> AUFBAU OSI Referenzmodell ("Das Modell an dem wir kommunikation definieren")
+>("ES KÖNNTEN fragen kommen wie was macht die Sicherungsschicht")
+>
 
 > Schicht 1 bis 2 = Pysische Schichten
 >
@@ -86,17 +88,13 @@ __1. BITÜBERTRAGUNSSCHICHT__
 
 __2. SICHERUNGSSCHICHT__
 
-    >
     soll für eine Fehlererkennung sorgen
     
-    >
     Pakete der Vermittlungsschicht in Rahmen der Sicherungsschicht verpackt und übertragen
 
-    >
     Definiert Mac adressen
     sorgt für Datenübertragung auf physischer ebene
     
-    >
     Für die Zustellung beim Empfänger sind physische Adressen erforderlich
     MAC-Adressen
     Befinden sich auf der Sicherungsschicht
@@ -110,14 +108,11 @@ __2. SICHERUNGSSCHICHT__
 
 __4.VERMITTLUNGSSCHICHT__
     
-    >
     Das ist die erste logische Netzwerkschicht
 
-    >
     Auf dieser Schicht werden logische Adressen definiert
     = IP-Adressen
 
-    > 
     Auf dieser Schicht werden Segmente der Transportschicht in Pakete verpackt
 
 
@@ -129,13 +124,10 @@ __4. TRANSPORTSCHICHT__
 >
 > Ein Segment kann aus mehreren Paketen bestehen ,ein Paket kann aus mehreren Rahmen bestehen
 
-    >
     Hier werden Segmente transportiert
 
-    >
     Tatsache: Ende-2-Ende-Verbindung
 
-    >
     Zuordnung der Kommunikation zu den laufenden Prozessen
     > Ports werden durch Portnummern adressiert
     Sorgt für die korrekte Auslieferung an die richtigen Anwendungen
@@ -154,31 +146,24 @@ __5. SITZUNGSSCHICHT__
 
 __6. DARSTELLUNGSSCHICHT__
     
-    >
     In dieser Schicht sind Regeln zur Formatierung (Präsentation) von Nachrichten enthalten
 
-    >
     Erweiterung von Datensätzen mit Feldern wie Name, Artikelnummer,…
 
-    >
     Kompression und/oder Verschlüsselung der Daten werden der Darstellungsschicht zugedacht
 
-    >
     In der Praxis aber kaum genutzt da dieses direkt von den Anwendungen gemacht wird
 
 
 
 __6. ANWENDUNGSSCHICHT__
 
-    >
     Hier entstehen und werden empfangen die eigentlichen Nachrichten
 
-    >
     Also hier sind die echten Anwendungen zu Hause
     Webserver
     Mailprogramm
 
-    >
     In Nerdsprache: HTTP, FTP, SMTP, POP3, IMAP, DNS, SSH, Telnet, ….
 
 
@@ -232,16 +217,15 @@ könnte jeden von uns interessieren :D.
 &nbsp;
 &nbsp;
 
-    >
     Heatmap erstellen und überprüfen ob der Access Point optimal positioniert ist
-    >
+
     Wifi-Kanal-Analyse um zu sehen, wer funkt noch alles auf diesem Kanal
     Im Zweifel Kanäle durchprobieren
     Eventuell von 2,4 GHz auf 5 GHz wechseln und geringere Ausbreitung in Kauf nehmen
-    >
+
     Überprüfen ob alle Empfänger in Reichweite des Wifi sich befinden
     Software-Updates der Wifi-Geräte 
-    >
+
     Problem: DHCP
     Sind mehrere DHCP-Server vorhanden kann es zu Problemen kommen
 
