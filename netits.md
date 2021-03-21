@@ -8,11 +8,11 @@
 
 
 
-[02_Topologien](#g2)
+[02 Topologien](#g2)
 
 [03 (Referenzmodelle)](#g3)
 
-[04 ((Ethernet, RJ45, LWL, strukturierte))](#g4)
+[04 (Ethernet, RJ45, LWL, strukturierte)](#g4)
 
 [05 (Wifi)](#g5)
 
@@ -24,7 +24,7 @@
 
 [12 (IPv6)](#g12)
 
-[15 (Routing RIP))](#g15)
+[15 (Routing RIP)](#g15)
 
 [16 (Routing OSPF)](#g16)
 
@@ -156,7 +156,7 @@ __6. DARSTELLUNGSSCHICHT__
 
 
 
-__6. ANWENDUNGSSCHICHT__
+__7. ANWENDUNGSSCHICHT__
 
     Hier entstehen und werden empfangen die eigentlichen Nachrichten
 
@@ -168,6 +168,8 @@ __6. ANWENDUNGSSCHICHT__
 
 
 ---
+
+!['Test'](https://i.imgur.com/TcmlgVL.png)
 
 
 
@@ -320,13 +322,49 @@ Jungen zu helfen.
 > Was ist Slaac ?
 > WAS AUTOCONFIGURATION ?
 
+    IPv4 – 32 Bits = 4 Bytes = 4.294.967.296 Adressen = ca. 4,3 Milliarden Adressen
+
+    IPv6 = 128 Bits = 16 Bytes = 3,4*1038 = ca. 340 Sextimillionen Adressen
+
+    Im IPv6 kann jeder Host sich selbst konfigurieren
+    Dazu braucht er eine MAC-Adresse und muß seinen zuständigen Netzwerkrouter finden können
+    Zunächst einmal bekommt der Host eine link-local-Adresse
+    Es ist erst einmal bei IPv6 kein DHCP zur Autokonfig notwendig
+
+    Man nennt das SLAAC (Stateless Address Auto Configuration)
+    Hier werden link-locale-Adressen produziert
+
+
 
 <a name="g15"></a>
 
-# 15 (Rouitng RIP)
+# 15 (Routing RIP)
 > JÖRG sagt :
 > 
 > solltet ihr wissen
+
+    Routing beschreibt die Weiterleitung von IP-Paketen
+    Dazu notwendig ist eine Wegebestimmung 
+
+    Nur so weiß der Router auf welchem Port welche Pakete weitergeleitet werden sollen
+
+    OSI-3 ist die Schicht auf dem Router arbeiten
+    Denn zum Routen werden die IP-Adressen benötigt
+    Und eine Tabelle, aus der hervorgeht auf welchem Port welche Netzwerke zu finden sind
+    Die sogenannte lokale Routingtabelle
+>    
+
+    Beim Starten eines Routers kennt dieser nur seine direkt angeschlossenen Netzwerke. Ein neuer Router sendet daher auf jedem RIP-konfigurierten Interface eine Aufforderung an alle seine Nachbarn mit der Bitte um Zusendung ihrer vollständigen Routingtabelle. Aus den erhaltenen Antworten errechnet der fragende Router die ersten Einträge seiner noch ungefüllten Routingtabelle. Im Anschluss daran schickt er ein triggered Update mit seiner neu erstellten Routingtabelle an alle RIP-Nachbarn, so dass diese ihrerseits über eventuelle neue Wege informiert werden.
+
+    NUR DIREKTE BEKANNSTSCHAFT :
+    Netz 1 – Router A ------- Router B ------- Router C
+
+    Das Netz 1 wird somit erreicht von:
+
+    Router A mit dem Hop 0
+    Router B mit Hop 1 über Router A
+    Router C mit Hop 2 über Router B und Router A.
+
 
 <a name="g16"></a>
 
@@ -336,6 +374,22 @@ Jungen zu helfen.
 > solltet ihr wissen und statisches routing auch für  IHK prüfung
 >
 > ihk Was unterschied rip und ospf ?
+
+    Im Gegensatz zu OSPF und  kennt ein RIP-Router immer nur seine direkten Nachbarn
+
+    Die nur direkte Bekanntschaft seiner Nachbarn ist auch das größte Problem von RIP. Zum einen ergeben sich hohe Konvergenzzeiten und das Count-to-Infinity-Problem. Infinität bezeichnet die Unerreichbarkeit eines Ziels und wird bei RIP mit dem Hop-Count 16 angegeben.
+
+    OSPF ist ein moderneres Routingprotokoll
+
+    OSPF nutzt Kosten als Metriken anstelle von Hops
+    Kosten orientieren sich an der Bandbreite
+
+    OSPF erreicht schnell den Zustand der Konvergenz
+
+    OSPF baut im Gegensatz zu Rip eine Topologie-Datenbank auf
+
+    OSPF erkennt schneller den „Tot“ einer Route
+
 
 <a name="g17"></a>
 
@@ -348,6 +402,41 @@ Jungen zu helfen.
 > 3 Wege Handshake solltet ihr kennen !
 > Viele IPV4 Fragen in der Ihk !
 
+    Aufgabe der Transportschicht :
+
+    Bereitstellung einer Ende-zu-Ende-Verbindung
+
+    Dienst zur Intreprozesskommunikation
+
+    Herausforderungen der Transportschicht :
+
+    Es ist nicht sichergestellt, dass alle IP-Pakete in der richtigen Reihenfolge ankommen
+
+    Es ist nicht sichergestellt, dass alle IP-Pakete überhaupt ankommen
+
+    Man unterscheidet:
+    Well known Ports: 0 – 1023
+    Registered Ports: 1024 – 49151
+    Private Ports: 49152 – 65535
+
+    __UDP__
+    Verbindungsloses Protokoll
+    Bedeutet: die Daten werden ohne den Aufbau einer Verbindung versendet
+    Es findet keine Sicherung der Datenübertragung statt
+    Übertragungen werden also nicht vom Empfänger beim Sender bestätigt
+
+
+
+[![Well known Ports](https://i.imgur.com/H3Cnxqs.png)](https://i.imgur.com/H3Cnxqs.png)
+
+[![TCP 3 wege handshake](https://i.imgur.com/SI9Vaht.png)](https://i.imgur.com/SI9Vaht.png)
+
+
+
+
+
+
+
 <a name="g18"></a>
 
 # 18 (DNS)
@@ -356,6 +445,32 @@ Jungen zu helfen.
 > Was ist DNS , Wie funktionierts ?
 > Vielleicht wie ist es aufgebaut ?
 > Wichtig ;)
+
+    DNS ist eine Namensauflösung von Domainnamen zu IP-Adressen
+
+    Domain-Name Beispiel: www.keine-schleichwerbung.eu 
+
+    Mittels DNS-Anfrage wird die richtige IP-Adresse zum Domainnamen herausgesucht
+    Die Verbindung findet auf IP-Ebene statt
+
+    __AUFBAU__
+    DNS ist hierarchisch in einer Baumstruktur organisiert
+    Die Informationen und Zuordnungen sind in separate Teile organisiert und im gesamten Internet auf Nameservern verteilt
+    Angefangen von der Wurzel werden die Top-Level-Domains (TLD) andressiert
+    Danach schließen sich die individuellen Domainnamen an
+    Vollständige Domainnamen werden als Full Qualified Domain Name (FQDN) bezeichnet
+    Ein FQDN kann sein: hostname.domainname.tld.
+    Beispiel: ESMAD005.schleichwerbung-consulting.eu.
+
+[![Strunktur DNS](https://i.imgur.com/glKlcjR.png)](https://i.imgur.com/glKlcjR.png)
+
+    DNS-Anfragen werden via UDP auf Port 53 gestellt
+    Die Antworten werden per UDP oder TCP an die Clients versandt (max. 512 Bytes)
+
+    Alternative zum DNS
+    Die Datei /etc/hosts unter Linux beispielsweise
+    Enthält ebenfalls Domain Namen zu IP Adressen
+
 
 
 <a name="g19"></a>
@@ -366,6 +481,43 @@ Jungen zu helfen.
 > Wie funktioniert DHCP ?
 > Harmlos ;).
 
+    DHCP ermöglicht die Zuweisung von
+    IP-Adresse
+    Subnetzmask
+    Default-Gateway
+    Nameserver
+    DHCP verwendet UDP auf Port 67 (Server) bzw. 68 (Client)
+    Sinnvoll insbesondere bei mobilen Endgeräten
+
+    __ARBEITSWEISE DHCP__
+    1
+
+    Wenn wir Client 1 einschalten sendet dieser einen DHCP-Discover als BC ins Netz
+
+    IP-Adresse Sender: 0.0.0.0
+    IP-Adresse Empfänger: 255.255.255.255
+
+    2
+    Jeder erreichbare DHCP-Server sendet darauf hin ein Adressangebot (DHCP-Offer) -> als BC
+
+    3
+    Der Client nimmt ein Adressangebot an, in dem er die Anfrage mittels einem DHCP-Request beantwortet
+
+    Das wird ebenfalls als BC versandt; die Nachricht enthält die gewünschte DHCP-Server-ID
+
+    4
+    Der DHCP-Server bestätigt die Annahme mittels DHCP-Ack und trägt die IP als „verliehen“ (Lease) in seine DB ein
+
+    5
+    Bevor der Client nun die IP verwendet prüft er erst einmal ob die IP nicht schon vergeben ist
+
+    Mittels ARP – falls schon vergeben lehnt der Client den Request ab.
+
+    Aktive Clients verlängern die Lease in dem Sie nach der Hälfte des Verfallsdatums einen erneuten DHCP-Request schicken
+
+![BILD](https://i.imgur.com/XiKtMkU.png)
+
+
 <a name="g21"></a>
 
 # 21 (VLAN)
@@ -374,6 +526,25 @@ Jungen zu helfen.
 > Wofür , was machen , funktion ?
 > Wichtiges Thema !
 
+    Ein Virtual Local Area Network (VLAN) ist ein logisches Teilnetz innerhalb eines Switches bzw. eines gesamten physischen Netzwerks.
+
+    Jedes VLAN bildet wie ein normales (physisches) LAN auch eine eigene Broadcast-Domäne. Der Verkehr zwischen VLANs wird wie bei physischen LANs auch über Router oder Switches vermittelt. 
+
+    Moderne Switches stellen diese Funktion intern zur Verfügung – man spricht dann von sogenannten Layer-3-Switches.
+
+    __WIKIPEDIA__
+    Ein Virtual Local Area Network (VLAN) ist ein logisches Teilnetz (Segment (Netzwerk)) innerhalb eines Switches bzw. eines gesamten physischen Netzwerks. Es kann sich über mehrere Switches hinweg ausdehnen. Ein VLAN trennt physische Netze in Teilnetze auf, indem es dafür sorgt, dass VLAN-fähige Switches Frames (Datenpakete) nicht in ein anderes VLAN weiterleiten (obwohl die Teilnetze an gemeinsamen Switches angeschlossen sein können).
+
+    ++ VORTEILE ++
+    Flexibilität
+    bei der Zuordnung von Endgeräten zu Netzwerksegmenten, unabhängig vom Standort der Basisstation.
+
+    Performance-Aspekte
+    So kann zum Beispiel ein bestimmter Datenverkehr wie VoIP in einem VLAN erfolgen, das bei der Übertragung priorisiert wird. 
+
+    Sicherheitsaspekte
+    VLANs können Netze gegen Ausspionieren und Abhören besser absichern als geswitchte Netze.
+
 
 <a name="g22"></a>
 
@@ -381,6 +552,14 @@ Jungen zu helfen.
 > JÖRG sagt :
 > 
 > Ping und Tracert kennen wir !
+
+    Ping ist ein Diagnose-Werkzeug, mit dem überprüft werden kann, ob ein bestimmter Host in einem IP-Netzwerk erreichbar ist.
+
+    Ping sendet ein ICMP(v6)-„Echo-Request“-Paket (ping, ICMP-Pakettyp 8 (0x08)) an die Zieladresse des zu überprüfenden Hosts. Der Empfänger muss, sofern er das Protokoll unterstützt, laut Protokollspezifikation eine Antwort zurücksenden:
+
+    Traceroute ist ein Computerprogramm, das ermittelt, über welche Router und Internet-Knoten IP-Datenpakete bis zum abgefragten Rechner gelangen.
+
+    Traceroute sendet mehrfach IP-Datenpakete vom Typ ICMP Echo Request an den Ziel-Host, beginnend mit einer Time to Live (TTL) von 1. Der erste Router, der das Datenpaket weiterleiten soll, zählt den Wert der TTL um eins herunter auf 0, woraufhin er es nicht weiterleitet, sondern verwirft.
 
 <a name="g23"></a>
 
@@ -391,7 +570,35 @@ Jungen zu helfen.
 > Was ist eine Firwall , Was macht eine Firewall nicht
 > Wie funktioniert das abarbeiten des Regelwerks ?
 
-    pin udn traceoute
+    Firewalls werden dazu genutzt
+    Den Traffic in Netzwerken zu filtern
+
+    Nicht um Netzwerke zu segmentieren!!
+
+    Anhand von definierten Entscheidungsmodellen wird entschieden
+    Ob Datenpakete in das Netzwerksegment (oder innerhalb der Maschine) weitergeleitet werden oder nicht
+
+    Es gibt statische und dynamische Firewalls
+    Firewalls arbeiten nach definierten Regeln
+    Zeilenweise Abarbeitung!!
+
+    Paketfilterung
+    Es werden Datenpaket auf OSI 3 und OSI 4 analysiert
+    Filterung kann erfolgen nach
+    Protokolltypen (UDP/TCP)
+    Nach Ports/Sockets
+    Unidirektional/bidirektional
+    Sind zumeist statische Regeln, die der Admin eintragen muß
+
+    Beispiel-Regelwerk:
+    Aus dem Internet sind zum Mailserver in der DMZ Mail-Dienste (SMTP – TCP-Port 25, POP3 – TCP-Port 110 und IMAP – TCP-Port 143) erlaubt.
+    Der Mailserver darf aus der DMZ in das Internet Mails per SMTP verschicken und DNS-Anfragen stellen.
+    Aus dem lokalen Netz sind Administrationsdienste (SSH, Remote Desktop, Backup – TCP-Port 22) zum Mailserver erlaubt.
+    Alle anderen Pakete in oder aus der DMZ werden in eine Logdatei geschrieben und danach verworfen
+
+
+
+
 
 
 
