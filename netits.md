@@ -490,8 +490,8 @@ Jungen zu helfen.
     Sinnvoll insbesondere bei mobilen Endgeräten
 
     __ARBEITSWEISE DHCP__
+    
     1
-
     Wenn wir Client 1 einschalten sendet dieser einen DHCP-Discover als BC ins Netz
 
     IP-Adresse Sender: 0.0.0.0
