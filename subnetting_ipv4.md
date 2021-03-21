@@ -1,3 +1,5 @@
+https://www.aelius.com/njh/subnet_sheet.html
+
 ![Binary](https://i.imgur.com/LnMFszR.png)
 
 ![Hexadecimal](https://i.imgur.com/axhM6Q6.png)
@@ -16,3 +18,8 @@ für die berechnung von Subnetzen ;).
 ![](https://i.imgur.com/WjXicxp.png)
 
 ![](https://i.imgur.com/6jTA2gq.png)
+
+
+
+
+![](https://i.imgur.com/mGg4awt.png)
