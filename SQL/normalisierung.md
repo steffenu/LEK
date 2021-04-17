@@ -42,3 +42,6 @@ https://www.datenbanken-verstehen.de/datenmodellierung/normalisierung/boyce-codd
 
   Wenn wir diese für uns übersetzen , dann sind die Schritte Easy Bruder.
 
+
+  # Übung
+

@@ -1,8 +1,7 @@
 > Mit der Normalisierung 
   von Datensätzen 
   erreichen wir eine "Referentielle Integrität.
-
-  Mit welcher wir einfach gesagt anomlalien , datenverlust usw ... verhindern
+  Mit welcher wir einfach gesagt anomlalien , datenverlust usw ... verhindern.
 
 
 
