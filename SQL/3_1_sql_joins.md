@@ -1,4 +1,4 @@
-    DISTINCT – Operator
+
     PRIMARY KEY
     WHERE-Klausel
         • LIKE

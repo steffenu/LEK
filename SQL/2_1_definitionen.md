@@ -13,7 +13,6 @@ Transitive Abhängigkeit
 # https://www.datenbanken-verstehen.de/datenmodellierung/normalisierung/abhaengigkeiten-normalisierung/
 
 # VIDEOS
->watch it bruder
 > leichter zu verstehen wenn man es sieht
 
 1 NF

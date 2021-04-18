@@ -82,10 +82,10 @@ CROSS JOIN
         • Grundlagen für Beziehungen
         • INNER JOIN
 #
-OUTER JOINs
-LEFT OUTER
-RIGHT OUTER
-FULL OUTER ~ UNION / UNION ALL
+        OUTER JOINs
+        LEFT OUTER
+        RIGHT OUTER
+        FULL OUTER ~ UNION / UNION ALL
 
 
 Umgang mit NULL

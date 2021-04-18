@@ -60,9 +60,5 @@ https://www.datenbanken-verstehen.de/datenmodellierung/normalisierung/boyce-codd
 https://de.wikipedia.org/wiki/Normalisierung_(Datenbank)#Erste_Normalform_(1NF)
 
 
-  # Übung
-
-  # http://maihack.de/Vorlesungen/datenbanken/sql/Folien/%C3%9Cbungen-Normalisierung_1.pdf
-
 
 
