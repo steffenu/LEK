@@ -23,5 +23,3 @@ Welche Beziehung gibt es :
 
 # Krähenfuß-Notation (Martin)
 
-# Übung
-
