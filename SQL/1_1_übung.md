@@ -1,0 +1,1 @@
+http://www.roro-seiten.de/info/db/06Relationenmodell2/Relationenmodell2.html

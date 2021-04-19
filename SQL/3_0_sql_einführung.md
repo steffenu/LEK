@@ -71,6 +71,37 @@
     ALTER TABLE table_name
     ALTER COLUMN column_name datatype;
 
+# Group By
+    SELECT column_name(s)
+    FROM table_name
+    WHERE condition
+    GROUP BY column_name(s)
+    ORDER BY column_name(s);
+
+# Having
+The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions. -->
+
+    SELECT column_name(s)
+    FROM table_name
+    WHERE condition
+    GROUP BY column_name(s)
+    HAVING condition
+    ORDER BY column_name(s);
+
+# Order By
+
+    SELECT column1, column2, ...
+    FROM table_name
+    ORDER BY column1, column2, ... ASC|DESC;
+
+# subqueri
+    SELECT column-names
+    FROM table-name1
+    WHERE value IN 
+    (SELECT column-name FROM table-name2 
+    WHERE condition)
+
+        • Andere Formulierung mit Korreliertem Subselect
 
 #
 # 
