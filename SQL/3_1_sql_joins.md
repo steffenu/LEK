@@ -1,3 +1,6 @@
+   Video gucken :
+   https://www.youtube.com/watch?v=9ylj9NR0Lcg
+   
     Implementation der Normalisierung
         • FOREIGN KEY
         • PRIMARY KEY
